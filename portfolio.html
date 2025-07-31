@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이윤범 - 신입 개발자 포트폴리오</title>
+  <meta name="description" content="신입 개발자 이윤범의 포트폴리오입니다. HTML, Java, Spring Boot 기반 프로젝트 소개 및 연락처 안내." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #333;
+      --card-bg: #fff;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+    nav {
+      background-color: rgba(34, 34, 34, 0.95);
+      color: #fff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .logo a {
+      color: #fff;
+      text-decoration: none;
+    }
+    ul.nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    ul.nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    ul.nav-links li a:hover {
+      color: #00bcd4;
+    }
+    .toggle-btn {
+      background: none;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #00bcd4;
+      color: #fff;
+      border-color: #00bcd4;
+    }
+    .hero {
+      max-width: 2000px;
+      height: 600px;
+      margin: 0 auto;
+      padding: 8.5rem 1.5rem 4rem;
+      background: linear-gradient(to bottom, #00bcd4, #2196f3);
+      color: #fff;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+      .hero h2 {
+        font-size: 18px;
+      }
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #2196f3;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero button:hover {
+      background-color: #e0e0e0;
+    }
+    section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 30px;
+      border-left: 6px solid #00bcd4;
+      padding-left: 15px;
+    }
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-img {
+      width: 280px;
+      height: 360px;
+      border-radius: 15px;
+      background-image: url("./5.jpg");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .about-content {
+      flex: 1;
+    }
+    .profile-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+    .profile-item .icon {
+      width: 24px;
+      height: 24px;
+    }
+    .profile-item .label {
+      font-weight: bold;
+      min-width: 80px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .skills-group {
+      margin-bottom: 20px;
+    }
+    ul.skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    ul.skills-list li {
+      background-color: #e0f7fa;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card a {
+      color: #2196f3;
+      font-weight: bold;
+    }
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    form input,
+    form textarea {
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+    form button {
+      background-color: #4a5a72;
+      color: white;
+      font-weight: bold;
+      padding: 12px 0;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #222;
+      color: #ccc;
+    }
+
+    .skills-list li {
+      background-color: #e0f7fa;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .skills-list li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background-color: #b2ebf2;
+    }
+
+    .skills-list li img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .skills-list li span {
+      font-size: 16px;
+    }
+
+    #intro {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 20px;
+      line-height: 1.7;
+      font-size: 18px;
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar-container">
+      <div class="logo"><a href="#">LYB's Portfolio</a></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="toggle-btn" onclick="toggleDarkMode()" id="darkBtn">🌙 다크 모드</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>-이윤범-<br>신입 개발자 포트폴리오</h1>
+    <h2>안녕하세요. 저는 끊임없이 성장하는 신입 개발자입니다.</h2>
+    <button onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">더 알아보기</button>
+  </section>
+
+  <!-- INTRODUCTION (★ 새로 추가) -->
+  <section id="intro" data-aos="fade-up">
+    <h2 class="section-title">INTRODUCTION</h2>
+    <p class="intro-text">
+      끊임없이 배우고 성장하는 것을 즐기며, 문제 해결 과정에서 기쁨을 느끼는 개발자 <strong>이윤범</strong>입니다.
+      사회복지학과에서 배운 ‘사람을 이해하는 마음’을 바탕으로 사용자 경험을 고민하고, 
+      기술을 통해 더 나은 세상을 만드는 데 기여하고자 합니다.<br><br>
+      <em>“코드는 읽는 사람이 이해하기 쉬워야 한다”</em>는 신념으로 
+      깔끔한 구조와 명확한 네이밍을 중요시하며,
+      <span style="white-space:nowrap;">Oracle·Spring Boot</span> 등의 백엔드와 
+      <span style="white-space:nowrap;">HTML·CSS·JavaScript</span> 기반 프론트엔드를 모두 다룰 수 있습니다.
+    </p>
+  </section>
+
+  <section id="about" data-aos="fade-up">
+    <h2 class="section-title">ABOUT</h2>
+    <div class="about-wrapper">
+      <div class="about-img"></div>
+      <div class="about-content">
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/3059/3059518.png"><span class="label">이름</span><span class="value">이윤범</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/565/565415.png"><span class="label">생년월일</span><span class="value">1998.10.01</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/732/732200.png"><span class="label">이메일</span><span class="value">dbsqja1233@naver.com</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/724/724664.png"><span class="label">연락처</span><span class="value">010-2210-9629</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/8262/8262226.png"><span class="label">학력</span><span class="value">동서대학교 사회복지학과</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/535/535188.png"><span class="label">주소</span><span class="value">경상남도 하동군</span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/13171/13171412.png"><span class="label"><a href="https://github.com/leeyb12" target="_blank">Github</a></span></div>
+        <div class="profile-item"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/1187/1187595.png"><span class="label"><a href="https://velog.io/@leeyb12/posts" target="_blank">Blog</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" data-aos="fade-right">
+  <h3 class="section-title">SKILLS</h3>
+
+  <div class="skills-group">
+    <h4>Languages</h4>
+    <ul class="skills-list">
+      <li><img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png" alt="Python" /><span>Python (★★★★☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java" /><span>Java (★★★★☆)</span></li>
+    </ul>
+  </div>
+
+  <div class="skills-group">
+    <h4>Frontend</h4>
+    <ul class="skills-list">
+      <li><img src="https://cdn-icons-png.flaticon.com/128/732/732212.png" alt="HTML" /><span>HTML (★★★★★)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="CSS" /><span>CSS (★★★★☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="JavaScript" /><span>JavaScript (★★★☆☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/760/760357.png" alt="React" /><span>React (★★★☆☆)</span></li>
+    </ul>
+  </div>
+
+  <div class="skills-group">
+    <h4>Backend</h4>
+    <ul class="skills-list">
+      <li><img src="https://cdn-icons-png.flaticon.com/128/16183/16183644.png" alt="Oracle" /><span>Oracle (★★★☆☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/919/919836.png" alt="MySQL" /><span>MySQL (★★★☆☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/8686/8686102.png" alt="MongoDB" /><span>MongoDB (★★★☆☆)</span></li>
+      <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8i4zPog-0j0JR_yZglxPhTPZXxN2iMTQ3Dw&s" alt="Spring Boot" /><span>Spring Boot (★★★☆☆)</span></li>
+    </ul>
+  </div>
+
+  <div class="skills-group">
+    <h4>Tools</h4>
+    <ul class="skills-list">
+      <li><img src="https://cdn-icons-png.flaticon.com/128/919/919853.png" alt="Docker" /><span>Docker (★★★☆☆)</span></li>
+      <li><img src="https://cdn-icons-png.flaticon.com/128/270/270798.png" alt="GitHub" /><span>GitHub (★★★★★)</span></li>
+      <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnoirCtiJhhN8Tvo0FJRRd4CInsOXkRX9EbA&s" alt="visual studio code" /><span>Visual Studio Code (★★★☆☆)</span></li>
+    </ul>
+  </div>
+</section>
+
+
+  <section id="projects" data-aos="fade-left">
+    <h3 class="section-title">PROJECTS</h3>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5930/5930147.png" alt="Game Project 이미지" style="width:100%; border-radius:8px; margin-bottom:10px;">
+        <h4>Game Project</h4>
+        <p>HTML/CSS/JS 기반 미니 게임 제작 (적 생성, 충돌, 점수 기록 등 구현)</p>
+        <a href="https://github.com/leeyb12/Game_project" target="_blank">GitHub 보기</a>
+      </div>
+      <div class="project-card">
+          <img src="./스크린샷 2025-07-03 165859.png" alt="포트폴리오 사이트" style="width:100%; border-radius:8px; margin-bottom:10px;">
+        <h4>포트폴리오 사이트</h4>
+        <p>반응형 웹 구성, 다크모드 및 AOS 애니메이션 기능 포함</p>
+        <a href="#home">자세히 보기</a>
+      </div>
+      <div class="project-card">
+        <img src="./스크린샷 2025-03-31 103057.png" alt="포트폴리오 사이트" style="width:100%; border-radius:8px; margin-bottom:10px;">
+        <h4>출결관리시스템</h4>
+        <p>PyQt5 GUI + Oracle DB로 실시간 출석체크 앱 구현</p>
+        <a href="https://github.com/leeyb12/mini_project" target="_blank">GitHub 보기</a>
+      </div>
+      <div class="project-card">
+        <img src="./스크린샷 2025-07-03 165635.png" alt="개발 예제 정리" style="width:100%; border-radius:8px; margin-bottom:10px;">
+        <h4>개발 예제 정리</h4>
+        <p>웹 개발 초급자용 예제 정리 사이트</p>
+        <a href="https://leeyb12.github.io/lyb_html/" target="_blank">자세히 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h3 class="section-title">CONTACT</h3>
+    <h3>이메일로 문의해주세요. dbsqja1233@naver.com</h3>
+  </section>
+
+  <footer>
+    <p>© 2025 이윤범. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const colors = ['skyblue', 'lightgreen', 'lightcoral', 'goldenrod', 'plum', 'tomato'];
+    document.querySelectorAll('.skills-list li').forEach(item => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      item.style.backgroundColor = randomColor;
+    });
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const btn = document.getElementById("darkBtn");
+      body.classList.toggle('dark-mode');
+      btn.innerText = body.classList.contains('dark-mode') ? '☀️ 라이트 모드' : '🌙 다크 모드';
+    }
+  </script>
+</body>
+</html>
