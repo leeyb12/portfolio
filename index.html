@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이윤범 - 신입 개발자 포트폴리오</title>
-  <meta name="description" content="신입 개발자 이윤범의 포트폴리오입니다. Java, Spring Boot, React 기반 풀스택 프로젝트 소개 및 연락처 안내." />
+  <meta name="description" content="신입 개발자 이윤범의 포트폴리오입니다. Spring Boot, React, Python 기반 프로젝트와 학습 기록을 소개합니다." />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -165,6 +165,7 @@
       font-weight: 400;
       color: var(--text-dim);
       margin-bottom: 38px;
+      line-height: 1.7;
     }
     .hero button {
       padding: 14px 32px;
@@ -306,13 +307,14 @@
       transition: transform 0.3s, border-color 0.3s;
       display: flex;
       flex-direction: column;
+      min-height: 380px;
     }
     .project-card:hover {
       transform: translateY(-6px);
       border-color: var(--accent);
     }
     .project-thumb {
-      height: 130px;
+      height: 136px;
       border-radius: 12px;
       margin-bottom: 16px;
       display: flex;
@@ -328,6 +330,12 @@
       line-height: 1.6;
       color: var(--text-dim);
       flex: 1;
+    }
+    .project-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 10px;
     }
     .tags {
       display: flex;
@@ -432,7 +440,7 @@
   <section class="hero" id="home">
     <span class="badge">&lt; Full-Stack Developer /&gt;</span>
     <h1>이윤범<br><span class="grad">신입 개발자 포트폴리오</span></h1>
-    <h2>끊임없이 성장하며, 읽기 좋은 코드를 만드는 개발자입니다.</h2>
+    <h2>사용자의 흐름을 먼저 생각하고, 유지보수하기 좋은 구조로 구현하는 개발자입니다.</h2>
     <button onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">더 알아보기</button>
   </section>
 
@@ -440,13 +448,13 @@
   <section id="intro" data-aos="fade-up">
     <h2 class="section-title">INTRODUCTION</h2>
     <p class="intro-text">
-      끊임없이 배우고 성장하는 것을 즐기며, 문제 해결 과정에서 기쁨을 느끼는 개발자 <strong>이윤범</strong>입니다.
+      꾸준히 배우고 직접 만들어 보며 성장하는 개발자 <strong>이윤범</strong>입니다.
       사회복지학과에서 배운 ‘사람을 이해하는 마음’을 바탕으로 사용자 경험을 고민하고,
       기술을 통해 더 나은 세상을 만드는 데 기여하고자 합니다.<br><br>
       <em>“코드는 읽는 사람이 이해하기 쉬워야 한다”</em>는 신념으로
       깔끔한 구조와 명확한 네이밍을 중요시하며,
-      <span style="white-space:nowrap;">Oracle·Spring Boot</span> 등의 백엔드와
-      <span style="white-space:nowrap;">React·JavaScript</span> 기반 프론트엔드를 모두 다룰 수 있습니다.
+      <span style="white-space:nowrap;">Spring Boot·Oracle·MariaDB</span> 기반 백엔드와
+      <span style="white-space:nowrap;">React·TypeScript·JavaScript</span> 기반 프론트엔드를 함께 다루고 있습니다.
     </p>
   </section>
 
@@ -523,67 +531,52 @@
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#11998e,#38ef7d);">📈</div>
         <h4>Stock Viewer</h4>
-        <p>국내·미국 주식 시세/차트/가치지표 조회, 모의 매매·포트폴리오, 종목별 게시판, 뉴스와 로컬 LLM 요약을 제공하는 주식 모니터링 플랫폼.</p>
+        <div class="project-meta">Full-stack / Finance</div>
+        <p>국내·미국 주식 검색, 시세·차트·가치지표 조회, 모의 매매, 포트폴리오, 종목별 게시판, 뉴스와 로컬 LLM 요약을 제공하는 주식 모니터링 플랫폼입니다.</p>
         <div class="tags">
           <span>Spring Boot</span><span>React</span><span>Oracle</span><span>JWT</span><span>LLM</span>
         </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#396afc,#2948ff);">🤖</div>
-        <h4>AI 면접 시뮬레이션</h4>
-        <p>이력서(PDF/DOCX) 업로드·텍스트 추출 후 Ollama LLM으로 맞춤형 면접 질문을 생성하고, 난이도별 세션·답변·피드백 리포트를 관리하는 서비스.</p>
-        <div class="tags">
-          <span>Spring Boot</span><span>MyBatis</span><span>React/Vite</span><span>Oracle</span><span>Ollama</span>
-        </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
+        <a href="https://github.com/JHJH1289/stock_viewer" target="_blank">GitHub 보기</a>
       </div>
 
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#f7971e,#ffd200);">📝</div>
         <h4>AI 노트 앱 (Note)</h4>
-        <p>마크다운 노트 CRUD·폴더 분류·파일 첨부·휴지통에 더해 Ollama LLM 기반 요약·번역·교정·이어쓰기·채팅을 지원하는 노트 애플리케이션.</p>
+        <div class="project-meta">Full-stack / Productivity</div>
+        <p>마크다운 노트 CRUD, 폴더 분류, 첨부파일, 휴지통, PDF 텍스트 추출과 Ollama 기반 요약·번역·교정·이어쓰기·채팅을 지원하는 노트 애플리케이션입니다.</p>
         <div class="tags">
-          <span>Spring Boot 4</span><span>React 19 · TS</span><span>MariaDB</span><span>PDFBox</span><span>Ollama</span>
+          <span>Spring Boot 4</span><span>React 19</span><span>TypeScript</span><span>MariaDB</span><span>Ollama</span>
         </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
+        <a href="https://github.com/leeyb12/Self-Study/blob/main/project/Note/README.md" target="_blank">GitHub 보기</a>
       </div>
 
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#8E2DE2,#4A00E0);">🎵</div>
         <h4>Music Board & Player</h4>
-        <p>회원 인증, 음악 업로드/재생, 게시판을 갖춘 풀스택 음악 관리·커뮤니티 플랫폼. WebSocket 기반 실시간 기능을 포함합니다.</p>
+        <div class="project-meta">Full-stack / Media</div>
+        <p>회원 인증, 음악 업로드·재생, 앨범 보관함, 게시판, 댓글, WebSocket 기반 실시간 채팅과 10가지 테마를 갖춘 음악 관리·커뮤니티 플랫폼입니다.</p>
         <div class="tags">
           <span>Spring Boot</span><span>React</span><span>Oracle</span><span>WebSocket</span><span>JWT</span>
         </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
+        <a href="https://github.com/leeyb12/Self-Study/blob/main/project/Music/README.md" target="_blank">GitHub 보기</a>
       </div>
 
       <div class="project-card">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#ee0979,#ff6a00);">🛒</div>
-        <h4>E-commerce 플랫폼</h4>
-        <p>회원·상품·장바구니·주문·리뷰·통계·배치 도메인으로 구성된 도메인 주도 쇼핑몰. Spring Batch와 Recharts 통계 대시보드를 포함합니다.</p>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#ff512f,#dd2476);">🎮</div>
+        <h4>Game Collection</h4>
+        <div class="project-meta">Frontend / Interactive</div>
+        <p>체스, 오목, 테트리스, 스도쿠, 2048, 3D 레이싱 등 다양한 미니게임을 React로 구현한 게임 모음 프로젝트입니다. 게임별 상태 관리와 반복 플레이 흐름을 분리해 구성했습니다.</p>
         <div class="tags">
-          <span>Spring Boot</span><span>Spring Batch</span><span>React/Vite</span><span>Zustand</span><span>Recharts</span>
+          <span>React</span><span>Vite</span><span>JavaScript</span><span>Game UI</span>
         </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#2193b0,#6dd5ed);">📇</div>
-        <h4>연락처 관리 (Phonebook)</h4>
-        <p>그룹별로 연락처를 등록·관리하는 주소록 애플리케이션. JWT 인증과 MUI 기반 UI로 구성했습니다.</p>
-        <div class="tags">
-          <span>Spring Boot</span><span>React/Vite</span><span>MUI</span><span>Oracle</span><span>JWT</span>
-        </div>
-        <a href="https://github.com/leeyb12" target="_blank">GitHub 보기</a>
+        <a href="https://github.com/leeyb12/Self-Study/blob/main/project/Game/README.md" target="_blank">GitHub 보기</a>
       </div>
 
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#485563,#29323c);">💬</div>
         <h4>커뮤니티 + 거래 게시판 (팀)</h4>
-        <p>5인 팀 미니프로젝트. 자유·거래 게시판, 댓글/좋아요, 캘린더를 갖춘 커뮤니티 서비스. GitHub Issues·Wiki·칸반으로 협업을 진행했습니다.</p>
+        <div class="project-meta">Team Project / Community</div>
+        <p>5인 팀 미니프로젝트로 자유·거래 게시판, 댓글, 좋아요, 캘린더 기능을 갖춘 커뮤니티 서비스입니다. GitHub Issues, Wiki, 칸반을 활용해 협업했습니다.</p>
         <div class="tags">
           <span>Java</span><span>Spring Boot</span><span>Oracle</span><span>팀 협업</span>
         </div>
@@ -593,7 +586,8 @@
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#00b09b,#96c93d);">🗓️</div>
         <h4>출결관리시스템</h4>
-        <p>PyQt5 GUI와 Oracle DB를 연동해 실시간 출석 체크가 가능한 데스크톱 앱을 구현했습니다.</p>
+        <div class="project-meta">Desktop / Attendance</div>
+        <p>PyQt5 GUI와 Oracle DB를 연동해 출석 체크, 출결 데이터 관리, 화면 기반 입력 흐름을 구현한 데스크톱 애플리케이션입니다.</p>
         <div class="tags">
           <span>Python</span><span>PyQt5</span><span>Oracle</span>
         </div>
@@ -603,7 +597,8 @@
       <div class="project-card">
         <div class="project-thumb" style="background:linear-gradient(135deg,#00bcd4,#2196f3);">💻</div>
         <h4>포트폴리오 & 예제 정리</h4>
-        <p>반응형·다크모드·AOS 애니메이션을 적용한 이 포트폴리오와, 웹 개발 입문자용 예제 정리 사이트.</p>
+        <div class="project-meta">Web / Archive</div>
+        <p>반응형 레이아웃, 다크/라이트 모드, AOS 애니메이션을 적용한 포트폴리오와 웹 개발 입문 예제를 정리한 학습 아카이브입니다.</p>
         <div class="tags">
           <span>HTML</span><span>CSS</span><span>JavaScript</span>
         </div>
@@ -617,7 +612,7 @@
     <h3 class="section-title">SELF-STUDY</h3>
     <p style="margin-bottom:30px; line-height:1.7;">
       <strong style="color:var(--text)">Python → 웹 기초(HTML/CSS/JS) → 「혼공」 시리즈 → Java → Spring Boot + React 풀스택</strong>으로 이어지는
-      단계별 학습 아카이브입니다. 강의 실습·교재 정리·코딩 문제 풀이와 토이 프로젝트를 꾸준히 기록하고 있습니다.
+      단계별 학습 아카이브입니다. 강의 실습, 교재 정리, 코딩 문제 풀이, 개인 프로젝트를 꾸준히 기록하고 있습니다.
     </p>
     <div class="study-container">
       <div class="study-card">
